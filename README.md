@@ -1,7 +1,7 @@
 
-# Face Detector using YOLO & Arduino
+# Face Detection & Recognition using Yolo, ResNet-18 & Arduino
 
-A Python-based face detection system using OpenCV and the YOLOV3 Face, integrated with Arduino for signal transmission.
+A Python-based face detection system using OpenCV and YOLOv3 for face detection, integrated with Arduino for real-time signal transmission, and a Python-based face recognition system leveraging a pre-trained ResNet-18, also integrated with Arduino for signal output.
 ## Arduino Setup
 
 
