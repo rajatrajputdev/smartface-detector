@@ -91,6 +91,21 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 ```
+
+## Face Recognition
+This project implements a real-time face recognition system using OpenCV, PyTorch, and a ResNet-18 model as a feature extractor. It consists of two scripts:
+1. register.py – Captures a person's face, extracts embeddings using ResNet-18, and saves them.
+2. recognize.py – Detects faces in a video stream, compares embeddings with saved ones, and identifies the person.
+
+### How It Works (Concise Version):
+1. Face Detection – Uses OpenCV’s **Haarcascade** to detect faces from the webcam feed.  
+2. Feature Extraction – A **pretrained ResNet-18** (with the last layer removed) converts faces into embeddings.  
+3. Face Registration (register.py) – Captures a face, extracts its embedding, and saves it as a `.npy` file.  
+4. Face Recognition (recognize.py) – Compares the detected face’s embedding with saved ones using **cosine similarity**.  
+   - If similarity is below **0.1**, the person is recognized; otherwise, labeled **"Unknown"**.  
+   - Sends a **signal to an Arduino** (`1` for recognized, `0` for unknown).  
+
+
 ##
-This system enables real-time face detection using YOLOv3, triggering the Arduino's LED when a face is detected. The integration ensures minimal lag and efficient performance, making it suitable for various applications.  
+This system enables real-time face detection using YOLOv3 & face recognition with pre-trained ResNet-18, triggering the Arduino's LED when a face is detected. The integration ensures minimal lag and efficient performance, making it suitable for various applications.  
 
